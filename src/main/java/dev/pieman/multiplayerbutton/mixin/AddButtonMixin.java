@@ -17,8 +17,8 @@ public abstract class AddButtonMixin extends Screen {
 	protected AddButtonMixin(Text title) {
 		super(title);
 	}
-
-	@ModifyVariable(at = @At(value = "FIELD", target = "Lnet/minecraft/client/gui/screen/GameMenuScreen;DISCONNECT_TEXT:Lnet/minecraft/text/Text;"), method = "initWidgets")
+	
+	@ModifyVariable(at = @At(value = "FIELD", target = "Lnet/minecraft/screen/ScreenTexts;DISCONNECT:Lnet/minecraft/text/Text;"), method = "initWidgets")
 	private GridWidget.Adder addMultiplayerButtonMultiplayer(GridWidget.Adder adder) {
 		addMultiplayerButton(adder);
 		return adder;

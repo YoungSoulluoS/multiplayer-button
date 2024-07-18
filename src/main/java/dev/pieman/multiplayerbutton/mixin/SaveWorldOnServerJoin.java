@@ -30,7 +30,7 @@ public class SaveWorldOnServerJoin extends Screen {
     @Inject(at = @At(value = "HEAD"), method = "method_19912(Lnet/minecraft/client/gui/widget/ButtonWidget;)V", cancellable = true)
     private void modifyCancelButton(CallbackInfo ci) {
         assert client != null;
-        if (client.isInSingleplayer() || client.isConnectedToRealms()) {
+        if (client.isInSingleplayer()) {
             ci.cancel();
             client.setScreen(parent);
         } else {
